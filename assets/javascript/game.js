@@ -16,6 +16,7 @@ var birdRandom = "";
 function startGame () {
     //Generate random number for goal
     goalRandom = Math.floor(Math.random() * 100) + 19;
+    currentRoundScore = 0;
 
     //Generate random number for each animal
     dogRandom = buttonGenerator();
@@ -37,6 +38,8 @@ function startGame () {
 function buttonGenerator () {
     return Math.floor(Math.random() * 12) + 1;
 };
+
+startGame();
 
 
 //What happens when you click an animal
@@ -64,11 +67,10 @@ function buttonGenerator () {
 function gameProgress() {
     if (goalRandom === currentRoundScore) {
         wins++;
-        currentRoundScore = 0;
+        totalScore += currentRoundScore;
         alert ("You Won!");
 
         //logic where currentRoundScore adds to totalScore
-        totalScore += currentRoundScore;
 
         document.getElementById("wins").innerHTML="Wins: " + wins;
         startGame();
@@ -76,7 +78,6 @@ function gameProgress() {
     else if (goalRandom <= currentRoundScore) {
         alert("You Lost!");
         loses++;
-        currentRoundScore = 0;
         document.getElementById("loses").innerHTML="Loses: " + loses;
         startGame();
 
@@ -85,5 +86,6 @@ function gameProgress() {
         //NEED TO ADD --- logic where if currentRoundScore is greater than goal == game restarts and loses increments
         console.log(currentRoundScore);
 
-    document.getElementById("totalScore").innerHTML="Current Score: " + currentRoundScore;
+    document.getElementById("currentRoundScore").innerHTML="Current Score: " + currentRoundScore;
+    document.getElementById("totalScore").innerHTML="Total Score: " + totalScore;
 };
