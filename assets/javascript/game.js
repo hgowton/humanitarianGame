@@ -15,21 +15,29 @@ document.getElementById("goalRandom").innerHTML="Current Goal: " + goalRandom
 var dogRandom = Math.floor(Math.random() * (12 - 2));
 console.log("dog increase: " + dogRandom);
 
+
 //Responding to clicks on animal images
-$(".animal-image").on("click", function() {
+$(".animal-dog").on("click", function() {
     currentRoundScore += dogRandom;
 
     //Checks if round score matches goal
     if (goalRandom === currentRoundScore) {
         wins++;
+        
+        //logic where currentRoundScore adds to totalScore
+        totalScore += currentRoundScore;
+
         document.getElementById("wins").innerHTML="Wins: " + wins
-
-        //NEED TO ADD --- logic where currentRoundScore adds to totalScore
     }
-    //NEED TO ADD --- logic where if currentRoundScore is greater than goal == game restarts and loses increments
-    console.log(goalRandom);
-    console.log(currentRoundScore);
 
-document.getElementById("totalScore").innerHTML="Current Score: " + currentRoundScore
-})
+        //NEED TO ADD --- logic where if currentRoundScore is greater than goal == game restarts and loses increments
+        console.log(currentRoundScore);
+
+    document.getElementById("totalScore").innerHTML="Current Score: " + currentRoundScore
+});
+
+
+
+
+
 
