@@ -107,5 +107,5 @@ function gameProgress() {
         console.log(currentRoundScore);
 
     document.getElementById("currentRoundScore").innerHTML="Current Score: " + currentRoundScore;
-    document.getElementById("totalScore").innerHTML="Total Score: " + totalScore;
+    document.getElementById("totalScore").innerHTML="Humanitarian Effort: " + totalScore;
 };

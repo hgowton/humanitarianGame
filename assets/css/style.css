@@ -8,9 +8,9 @@ img {
     color: lightskyblue;
 }
 
-h1 {
+h2 {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 35px;
+    font-size: 28px;
     text-shadow: 0 0 2px pink;
     text-align: center;
 }
@@ -22,7 +22,7 @@ h4 {
 
 p {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     text-shadow: 0 0 2px pink;
 }
 
@@ -33,6 +33,10 @@ p {
 
 #show {
     margin: 5px;
+}
+
+#centerJustify {
+    text-align: center;
 }
 
 .menu {
