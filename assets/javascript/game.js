@@ -28,7 +28,7 @@ $(document).ready(function() {
     $('#show').click(function() {
         $('.menu').toggle("slide");
     })
-})
+
 
 function startGame () {
     //Generate random number for goal
@@ -101,7 +101,9 @@ function gameProgress() {
         document.getElementById("loses").innerHTML="Loses: " + loses;
         startGame();
 
+
     }
+
 
         //NEED TO ADD --- logic where if currentRoundScore is greater than goal == game restarts and loses increments
         console.log(currentRoundScore);
@@ -109,3 +111,6 @@ function gameProgress() {
     document.getElementById("currentRoundScore").innerHTML="Current Score: " + currentRoundScore;
     document.getElementById("totalScore").innerHTML="Humanitarian Effort: " + totalScore;
 };
+
+
+})
