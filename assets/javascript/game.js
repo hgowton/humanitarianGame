@@ -13,6 +13,16 @@ var catRandom = "";
 var turtleRandom = "";
 var birdRandom = "";
 
+//variables audio
+var audioElementCat = document.createElement("audio");
+audioElementCat.setAttribute("src", "assets/sounds/meow.mp3");
+var audioElementDog = document.createElement("audio");
+audioElementDog.setAttribute("src", "assets/sounds/bark.mp3");
+var audioElementTurtle = document.createElement("audio");
+audioElementTurtle.setAttribute("src", "assets/sounds/bubble.mp3");
+var audioElementBird = document.createElement("audio");
+audioElementBird.setAttribute("src", "assets/sounds/tweet.mp3");
+
 function startGame () {
     //Generate random number for goal
     goalRandom = Math.floor(Math.random() * 100) + 19;
@@ -44,21 +54,25 @@ startGame();
 
 //What happens when you click an animal
     $(".animal-dog").on("click", function() {
+        audioElementDog.play();
         currentRoundScore += dogRandom;
         gameProgress();
     });
 
     $(".animal-cat").on("click", function() {
+        audioElementCat.play();
         currentRoundScore += catRandom;
         gameProgress();
     });
 
     $(".animal-turtle").on("click", function() {
+        audioElementTurtle.play();
         currentRoundScore += turtleRandom;
         gameProgress();
     });
 
     $(".animal-bird").on("click", function() {
+        audioElementBird.play();
         currentRoundScore += birdRandom;
         gameProgress();
     });

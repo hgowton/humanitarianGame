@@ -1,0 +1,19 @@
+body {
+    background: url("../images/pixel-heart.png");
+  }
+
+img {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 pink, 0 6px 20px 0;
+    color: lightskyblue;
+}
+
+p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    text-shadow: 0 0 2px pink;
+}
+
+.zoom:hover {
+    transform: scale(1.08); 
+}
