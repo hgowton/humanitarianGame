@@ -39,11 +39,25 @@ p {
     text-align: center;
 }
 
+.aid {
+    background-color: black;
+    border: 5px solid black;
+    border-radius: 12px;
+}
+
 .menu {
     background-color: #FDEDEC;
     border-radius: 5px;
     padding: 8px;
     margin: 8px;
+}
+
+#donations {
+    font-family: 'Open Sans', sans-serif;
+    color: pink;
+    font-size: 22px;
+    text-shadow: 0 0 2px white;
+    margin-left: 40%;
 }
 
 .zoom:hover {

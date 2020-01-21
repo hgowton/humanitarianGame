@@ -13,6 +13,9 @@ var dogRandom = "";
 var catRandom = "";
 var turtleRandom = "";
 var birdRandom = "";
+var decreaseOptions = [1, 3, 5, 7];
+var aidDonate = decreaseOptions[Math.round(Math.random())];
+var aidTime = decreaseOptions[Math.round(Math.random())];
 
 //variables audio --- Sounds were downloaded from Orange Free Sounds
 var audioElementCat = document.createElement("audio");
@@ -52,6 +55,8 @@ function startGame () {
     console.log("Cat: " + catRandom);
     console.log("Turtle: " + turtleRandom);
     console.log("Bird: " + birdRandom);
+    console.log("Time: " + aidTime);
+    console.log("Donate: " + aidDonate);
 
     //Prints goal for game
     document.getElementById("goalRandom").innerHTML="Your Goal: " + goalRandom
@@ -90,6 +95,17 @@ startGame();
         gameProgress();
     });
 
+    $(".aid-time").on("click", function() {
+        // audioElementBird.play();
+        currentRoundScore -= aidTime;
+        gameProgress();
+    });
+
+    $(".aid-donate").on("click", function() {
+        // audioElementBird.play();
+        currentRoundScore -= aidDonate;
+        gameProgress();
+    });
 
 //Determines won, lost, or game in progress
 function gameProgress() {
