@@ -4,6 +4,7 @@
 var goalRandom = "";
 var currentRoundScore = 0;
 var totalScore = 0;
+var level = "";
 var wins = 0;
 var loses = 0;
 
@@ -13,7 +14,7 @@ var catRandom = "";
 var turtleRandom = "";
 var birdRandom = "";
 
-//variables audio
+//variables audio --- Sounds were downloaded from Orange Free Sounds
 var audioElementCat = document.createElement("audio");
 audioElementCat.setAttribute("src", "assets/sounds/meow.mp3");
 var audioElementDog = document.createElement("audio");
@@ -22,6 +23,12 @@ var audioElementTurtle = document.createElement("audio");
 audioElementTurtle.setAttribute("src", "assets/sounds/bubble.mp3");
 var audioElementBird = document.createElement("audio");
 audioElementBird.setAttribute("src", "assets/sounds/tweet.mp3");
+var audioElementLevel1 = document.createElement("audio");
+audioElementLevel1.setAttribute("src", "assets/sounds/level1.mp3");
+var audioElementLevel2 = document.createElement("audio");
+audioElementLevel2.setAttribute("src", "assets/sounds/level2.mp3");
+var audioElementLevel3 = document.createElement("audio");
+audioElementLevel3.setAttribute("src", "assets/sounds/level3.mp3");
 
 //instructions button
 $(document).ready(function() {
@@ -83,6 +90,7 @@ startGame();
         gameProgress();
     });
 
+
 //Determines won, lost, or game in progress
 function gameProgress() {
     if (goalRandom === currentRoundScore) {
@@ -94,6 +102,7 @@ function gameProgress() {
 
         document.getElementById("wins").innerHTML="Wins: " + wins;
         startGame();
+        level();
     }
     else if (goalRandom <= currentRoundScore) {
         alert("You Lost!");
@@ -104,6 +113,26 @@ function gameProgress() {
 
     }
 
+    function level () {
+        if (totalScore >= 50) {
+            document.getElementById("level").innerHTML="Humanitarian Level: Novice";
+            audioElementLevel1.play();
+
+        }
+        
+        if (totalScore >= 200) {
+            level = "";
+            document.getElementById("level").innerHTML="Humanitarian Level: Intermediate";
+            audioElementLevel2.play();
+        }
+
+        if (totalScore >= 400) {
+            level = "";
+            document.getElementById("level").innerHTML="Humanitarian Level: Expert";
+            audioElementLevel3.play();
+            alert("Congratulations, your work with the animals has gone a long way!  You've become an Expert Humanitarian!")
+        }
+    }
 
         //NEED TO ADD --- logic where if currentRoundScore is greater than goal == game restarts and loses increments
         console.log(currentRoundScore);
