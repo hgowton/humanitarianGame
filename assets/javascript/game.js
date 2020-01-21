@@ -32,6 +32,10 @@ var audioElementLevel2 = document.createElement("audio");
 audioElementLevel2.setAttribute("src", "assets/sounds/level2.mp3");
 var audioElementLevel3 = document.createElement("audio");
 audioElementLevel3.setAttribute("src", "assets/sounds/level3.mp3");
+var audioElementTime = document.createElement("audio");
+audioElementTime.setAttribute("src", "assets/sounds/clock.mp3");
+var audioElementDonate = document.createElement("audio");
+audioElementDonate.setAttribute("src", "assets/sounds/cash_register.wav");
 
 //instructions button
 $(document).ready(function() {
@@ -96,13 +100,13 @@ startGame();
     });
 
     $(".aid-time").on("click", function() {
-        // audioElementBird.play();
+        audioElementTime.play();
         currentRoundScore -= aidTime;
         gameProgress();
     });
 
     $(".aid-donate").on("click", function() {
-        // audioElementBird.play();
+        audioElementDonate.play();
         currentRoundScore -= aidDonate;
         gameProgress();
     });
