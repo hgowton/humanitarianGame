@@ -13,7 +13,7 @@ var dogRandom = "";
 var catRandom = "";
 var turtleRandom = "";
 var birdRandom = "";
-var decreaseOptions = [1, 3, 5, 7];
+var decreaseOptions = [1,3,5,7];
 var aidDonate = decreaseOptions[Math.round(Math.random())];
 var aidTime = decreaseOptions[Math.round(Math.random())];
 
